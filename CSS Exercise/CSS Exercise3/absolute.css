@@ -1,0 +1,25 @@
+div{
+    width: 200px;
+    height: 200px;
+}
+
+
+.top-container{
+    background-color: blue;
+    color: white;
+    margin-top: 50px;
+}
+.mid-container{
+    background-color: red;
+    margin-left: 200px;
+    margin-top: -200px;
+
+ 
+
+}
+.low-container{
+    background-color: yellow;
+    margin-left: 400px;
+    margin-top: -200px;
+
+}

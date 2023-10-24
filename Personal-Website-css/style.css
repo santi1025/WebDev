@@ -1,0 +1,31 @@
+div {
+    background-color: aquamarine;
+    color: blue;
+}
+p {
+    font-family: cursive;
+}
+
+
+.jon{
+    display: none;
+
+  
+}
+
+
+.destination{
+    background-color: navy;
+    color: white;
+    border-color: red;
+    border-width: 1cm;
+    border-style: dotted;
+}
+.Tokio{
+    background-color: olive;
+    color: white;
+    border-color: gold;
+    border-width: 1cm;
+    border-style: dashed;
+    font-family: 'lucida sans', 'Lucida Sans Regular',;
+}
