@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Express API Project</title>
+</head>
+
+<body>
+    <h1>Welcome!</h1>
+    <form action="/submit-name" method="post" onsubmit="return false;">
+        <label for="nameInput">Enter your name:</label>
+        <input type="text" name="name" id="nameInput" placeholder="Enter your name" required>
+        <button type="submit" onclick="updateName()">Greet</button>
+    </form>
+    <h3>Thanks <span class="name" id="greetName"></span> for adding your name!!!</h3>
+    <form action="/submit-task" method="post" onsubmit="return false;">
+        <label for="taskInput">Enter your task:</label>
+        <input type="text" name="task" id="taskInput" placeholder="Enter your task" required>
+        <button type="submit" onclick="updateTask()">Add</button>
+    </form>
+    <div class="TODO">
+        <h2>TODO</h2>
+        <ul id="taskList">
+        </ul>
+    </div>
+    <div class="greetings">
+        <h2>My best greetings for you:</h2>
+        <ul id="nameList">
+        </ul>
+    </div>
+
+    <script>
+        function deleteTask(task) {
+            fetch('/delete-task', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ task })
+            })
+                .then(response => {
+                    if (response.status === 200) {
+                        // Si la eliminación fue exitosa, actualiza la lista de tareas
+                        updateTaskList();
+                    } else if (response.status === 404) {
+                        console.error('Task not found');
+                    } else {
+                        console.error('Error:', response.status);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+        function updateTaskList() {
+            const taskList = document.getElementById('taskList');
+
+            fetch('/get-tasks')
+                .then(response => response.json())
+                .then(data => {
+                    // Clear the task list before adding tasks
+                    taskList.innerHTML = '';
+
+                    data.tasks.forEach(task => {
+                        const listItem = document.createElement('li');
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Delete';
+                        listItem.textContent = task;
+                        listItem.appendChild(deleteButton);
+                        taskList.appendChild(listItem);
+
+                        deleteButton.addEventListener('click', () => {
+                            deleteTask(task);
+                        });
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function updateTask() {
+            const taskList = document.getElementById('taskList');
+            const task = document.getElementById('taskInput').value.trim();
+            const TODOSection = document.querySelector('.TODO');
+
+            if (task) {
+                document.getElementById('taskInput').value = '';
+
+                const listItem = document.createElement('li');
+                const deleteButton = document.createElement('button');
+                listItem.textContent = task;
+                deleteButton.textContent = 'Delete';
+
+                deleteButton.addEventListener('click', () => {
+                    deleteTask(task);
+                });
+
+                listItem.appendChild(deleteButton);
+                taskList.appendChild(listItem);
+
+                TODOSection.style.display = 'block';
+
+                fetch('/submit-task', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ task })
+                })
+                    .then(() => {
+                        updateTaskList();
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+        }
+
+        function updateNameList() {
+            const nameList = document.getElementById('nameList');
+
+            fetch('/get-names')
+                .then(response => response.json())
+                .then(data => {
+                    // Clear the list before adding names
+                    nameList.innerHTML = '';
+
+                    data.names.forEach(name => {
+                        const listItem = document.createElement('li');
+                        const wazzupButton = document.createElement('button');
+                        wazzupButton.textContent = 'Wazzup';
+                        wazzupButton.addEventListener('click', () => {
+                            window.location.href = `/wazzup?name=${name}`;
+                        });
+                        listItem.textContent = name;
+                        listItem.appendChild(wazzupButton);
+                        nameList.appendChild(listItem);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        
+
+        function updateName() {
+            const name = document.getElementById('nameInput').value.trim();
+            const greetName = document.getElementById('greetName');
+            const nameList = document.getElementById('nameList');
+            const greetingsSection = document.querySelector('.greetings');
+
+            if (name) {
+                greetName.textContent = name;
+                document.getElementById('nameInput').value = '';
+
+                const listItem = document.createElement('li');
+                const wazzupButton = document.createElement('button');
+                listItem.textContent = name;
+                wazzupButton.textContent = 'Wazzup';
+                wazzupButton.addEventListener('click', () => {
+                    window.location.href = `/wazzup?name=${name}`;
+                });
+                listItem.appendChild(wazzupButton);
+                nameList.appendChild(listItem);
+
+                greetingsSection.style.display = 'block';
+
+                fetch('/submit-name', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name })
+                })
+                    .then(() => {
+                        updateNameList();
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+        }
+        updateTaskList();
+        updateNameList();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wazzup</title>
+</head>
+<body>
+    <h1>Wazzup Page</h1>
+    <p>This is the wazzup page for <span id="name"></span>.</p>
+    <a href="/">Back to Home</a>
+</body>
+</html>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+    
+    const nameElement = document.getElementById("name");
+    if (nameElement && name) {
+        nameElement.textContent = name;
+    }
+</script>
+
