@@ -1,0 +1,14 @@
+{
+  "name": "7-basic-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "santiago",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

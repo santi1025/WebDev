@@ -1,0 +1,57 @@
+[
+
+    {
+        "name": "Mad max",
+        "sinopsis" : "Aunque está decidido a vagar solo por el páramo post-apocalíptico, Mad Max se une a Furiosa, una comandante fugitiva, y su banda, quienes están tratando de escapar de un señor de la guerra.",
+        "anio" : 2015,
+        "image": "https://i.pinimg.com/originals/06/8b/ff/068bfff962680169e39e148db617c097.jpg"
+  
+       
+
+    },
+    {
+        "name": "Avengers",
+        "sinopsis" : "Cuando un enemigo inesperado surge como una gran amenaza para la seguridad mundial, Nick Fury, director de la Agencia SHIELD, decide reclutar a un equipo para salvar al mundo de un desastre casi seguro. Los vengadores, el legendario grupo de superhéroes formado por Ironman, Hulk, Thor y el Capitán América entre otros.",
+        "anio" : 2012,
+        "image": "https://cdn.kobo.com/book-images/179c31cf-2bc9-4f86-9fff-d45786ebf912/1200/1200/False/marvel-s-avengers-1.jpg"
+  
+
+
+    },
+
+    {
+        "name": "Lord of the rings",
+        "sinopsis" : "En la Tierra Media, el Señor Oscuro Sauron forjó los Grandes Anillos del Poder y creó uno con el poder de esclavizar a toda la Tierra Media. Frodo Bolsón es un hobbit al que su tío Bilbo hace portador del poderoso Anillo Único con la misión de destruirlo. Acompañado de sus amigos, Frodo emprende un viaje hacia Mordor, el único lugar donde el anillo puede ser destruido. Sin embargo, Sauron ordena la persecución del grupo para recuperar el anillo y acabar con la Tierra Media.",
+        "anio" : 2001,
+        "image": "https://i5.walmartimages.com/asr/2c7baa87-05a1-47b4-8ccd-c46294866165.3001c6a2a5122040f9508a8f5cf2a1eb.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF"
+
+    },
+    {
+        "name": "Warcraft",
+        "sinopsis" : "El mundo de los orcos está en proceso de desaparición. Para salvar a su especie, los orcos abren un portal que los lleva a la que será su nueva tierra: al pacífico reino de Azeroth, hogar de los hombres.",
+        "anio" : 2016,
+        "image":"https://upload.wikimedia.org/wikipedia/en/5/56/Warcraft_Teaser_Poster.jpg"
+
+
+    },
+    {
+        "name": "Godzilla vs kong",
+        "sinopsis" : "Godzilla y Kong, dos de las fuerzas más poderosas de un planeta habitado por aterradoras criaturas, se enfrentan en un espectacular combate que sacude los cimientos de la humanidad. Monarch se embarca en una misión de alto riesgo y pone rumbo hacia territorios inexplorados para descubrir los orígenes de estos dos titanes, en un último esfuerzo por tratar de salvar a dos bestias que parecen tener las horas contadas sobre la faz de la Tierra.",
+        "anio" : 2021,
+        "image": "https://www.nacionflix.com/__export/1661625532423/sites/debate/img/2022/08/27/godzilla-vs-kong-amenaza-desconocida-subterranea.jpg_976912859.jpg"
+
+    },
+    {
+        "name": "Amazing spiderman",
+        "sinopsis" : "Como la mayoría de los adolescentes de su edad, Peter está intentando descubrir quién es y cómo ha llegado a ser lo que es. En su viaje para atar los cabos de su pasado, descubre un secreto familiar que finalmente dará forma a su destino como Spiderman.",
+        "anio" : 2012,
+        "image":"https://m.media-amazon.com/images/I/91cAWkfjPEL._AC_UF1000,1000_QL80_.jpg"
+
+
+    }
+
+
+
+
+
+]
