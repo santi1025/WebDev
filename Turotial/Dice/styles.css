@@ -1,0 +1,41 @@
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.dice {
+  text-align: center;
+  display: inline-block;
+
+}
+
+body {
+  background-color: rgba(21, 0, 255, 0.3);
+}
+
+h1 {
+  margin: 40px;
+  font-family: 'Lobster', cursive;
+  text-shadow: 5px 0 rgb(8, 35, 70);
+  font-size: 8rem;
+  color: rgba(27, 30, 79, 0.868);
+}
+
+p {
+  font-size: 3rem;
+  color: rgba(23, 168, 7, 0.94);
+  font-family: 'Brush Script MT';
+}
+
+img {
+  width: 85%;
+}
+
+footer {
+  margin-top: 8%;
+  color: #d3a8a8;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+
+}
